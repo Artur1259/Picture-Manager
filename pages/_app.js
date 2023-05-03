@@ -1,6 +1,12 @@
+import { AuthProvider } from "../context/AuthContext";
 import "../styles/global.css";
 import "focus-visible";
 
-const StegaPhoto = ({ Component, pageProps }) => <Component {...pageProps} />;
+function PictureManager({ Component, pageProps }) {
+    return (
+        <AuthProvider>
+            <Component {...pageProps} />
+        </AuthProvider>)
+}
 
-export default StegaPhoto;
+export default PictureManager;

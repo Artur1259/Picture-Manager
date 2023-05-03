@@ -1,21 +1,22 @@
 import FormRadio from "./FormRadio";
 
 const ChooseFlow = ({ onChoice }) => (
-    <fieldset form="form" className="grid gap-4 mb-32">
-        <p className="mb-4">I would like to</p>
+    <fieldset form="form" className="flex flex-col content-between gap-4 mb-3 mt-10">
         <FormRadio
             name="chooseFlow"
             value="hide"
-            label="hide files inside an image"
+            label="թաքցնել ֆայլերը պատկերի ներսում"
             onChange={onChoice}
         />
         <FormRadio
             name="chooseFlow"
             value="find"
-            label="retrieve files from an image"
+            label="վերականգնել ֆայլերը պատկերից"
             onChange={onChoice}
         />
     </fieldset>
+    
+    
 );
 
 export default ChooseFlow;

@@ -27,13 +27,13 @@ const StepsFind = () => {
     };
 
     return (
-        <form id="form" className="grid gap-32">
+        <form id="form" className="grid gap-32 py-32 container xl:max-w-screen-xl mx-auto px-8">
             <div>
                 <p className="mb-8">
-                    Add the image you want to retrieve files from within
+                Ավելացրեք այն պատկերը, որից ցանկանում եք վերականգնել ֆայլերը
                 </p>
                 <FormFiles
-                    type="image"
+                    type="նկար"
                     accept="image/*"
                     files={image}
                     setFiles={setImage}
@@ -41,8 +41,8 @@ const StepsFind = () => {
             </div>
             <div>
                 <p className="mb-8">
-                    Enter the password used to hide the files{" "}
-                    <span className="text-gray-400">(may be blank)</span>
+                    Մուտքագրեք ֆայլերը թաքցնելու համար օգտագործվող գաղտնաբառը{" "}
+                    <span className="text-gray-400"></span>
                 </p>
                 <FormPassword value={password} onChange={setPassword} />
             </div>
@@ -53,10 +53,10 @@ const StepsFind = () => {
                     download={result && URL.createObjectURL(result)}
                 >
                     {result
-                        ? "Download files"
+                        ? "Ներբեռնել ֆայլերը"
                         : finding
                         ? "Finding files..."
-                        : "Find files inside image"}
+                        : "Պատկերի ներսում ֆայլերի որոնում"}
                 </ProgressButton>
             </div>
         </form>

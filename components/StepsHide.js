@@ -18,12 +18,11 @@ const StepsHide = () => {
     const hideFiles = () => {
         setHiding(true);
         const worker = new HideWorker();
-
         worker.onmessage = ({ data: { progress, result } }) => {
+            console.log(result);
             setProgress(progress);
             setResult(result);
         };
-
         worker.postMessage({
             image,
             files,
@@ -33,24 +32,26 @@ const StepsHide = () => {
     };
 
     return (
-        <form id="form" className="grid gap-32">
+        <>
+        <div className="w-full bg-gray-600 border-b border-solid border-gray-900 mb-10"></div>
+        <form id="form" className="grid gap-32 py-32 container xl:max-w-screen-xl mx-auto px-8">
             <div>
                 <p className="mb-8">
-                    Add the image you want to hide the files inside
+                Ավելացրեք այն պատկերը, որի ներսում ցանկանում եք թաքցնել ֆայլերը
                 </p>
                 <FormFiles
-                    type="image"
+                    type="նկար"
                     accept="image/*"
                     files={image}
                     setFiles={setImage}
-                />
+                />  
             </div>
             <div>
-                <p className="mb-8">Add the files you would like to hide</p>
-                <FormFiles multiple files={files} setFiles={setFiles} />
+                <p className="mb-8">Ավելացրեք այն ֆայլերը, որոնք ցանկանում եք թաքցնել</p>
+                <FormFiles multiple type="ֆայլ" files={files} setFiles={setFiles} />
             </div>
             <div>
-                <p className="mb-8">Choose the compression level</p>
+                <p className="mb-8">Ընտրեք սեղմման մակարդակը</p>
                 <FormRange
                     min={0}
                     max={9}
@@ -61,8 +62,8 @@ const StepsHide = () => {
             </div>
             <div>
                 <p className="mb-8">
-                    Choose and confirm password{" "}
-                    <span className="text-gray-400">(optional)</span>
+                Ընտրեք և հաստատեք գաղտնաբառը{" "}
+                    {/* <span className="text-gray-400">(optional)</span> */}
                 </p>
                 <FormPassword
                     value={password}
@@ -79,13 +80,14 @@ const StepsHide = () => {
                     download={result && URL.createObjectURL(result)}
                 >
                     {result
-                        ? "Download image"
+                        ? "Ներբեռնել"
                         : hiding
-                        ? "Hiding files..."
-                        : "Hide files inside image"}
+                        ? "Թաքցնել ֆայլը..."
+                        : "Թաքցնել ֆայլը պատկերի մեջ"}
                 </ProgressButton>
             </div>
         </form>
+        </>
     );
 };
 

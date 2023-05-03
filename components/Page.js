@@ -8,14 +8,14 @@ const NOSCRIPT = `
 `;
 
 const Page = ({ children }) => (
-    <div className="min-h-screen flex flex-col justify-between bg-gray-800 text-gray-100 text-xl lg:text-2xl">
+    <div className="min-h-screen flex flex-col justify-between bg-white text-black text-xl lg:text-2xl">
         <Head>
             <meta charSet="utf-8" />
             <meta
                 name="viewport"
                 content="width=device-width, initial-scale=1"
             />
-            <title>StegaPhoto</title>
+            <title>Picture Manager</title>
             <link
                 rel="preconnect"
                 href="https://fonts.gstatic.com"
@@ -34,7 +34,7 @@ const Page = ({ children }) => (
             />
             <meta
                 name="description"
-                content="Hide files inside images easily using StegaPhoto, using in-browser steganography techniques."
+                content="Hide files inside images easily using PictureManager, using in-browser steganography techniques."
             />
             <link
                 rel="apple-touch-icon"

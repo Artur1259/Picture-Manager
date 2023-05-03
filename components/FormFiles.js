@@ -50,11 +50,11 @@ const FormFiles = ({ type = "file", multiple, accept, files, setFiles }) => {
     };
 
     return (
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-gray-900 bg-opacity-25 shadow-inner p-8 -mx-8 sm:-mx-4 sm:rounded-lg">
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-8   p-8 -mx-8 sm:-mx-4 sm:rounded-lg">
             {files.map((file, index) => (
                 <li
                     key={index}
-                    className="relative flex flex-row items-center text-base md:text-lg bg-gray-700 shadow rounded"
+                    className="relative flex flex-row items-center text-base md:text-lg bg-gray-400 shadow rounded"
                 >
                     <span className="flex-grow py-2 px-4 truncate">
                         {file.name}
@@ -63,7 +63,8 @@ const FormFiles = ({ type = "file", multiple, accept, files, setFiles }) => {
                         {pretty(file.size)}
                     </span>
                     <button
-                        className="self-stretch px-3 text-3xl bg-gray-800 bg-opacity-25 hover:bg-opacity-50 focus:outline-none focus-visible:ring ring-blue-500 ring-opacity-50 rounded-r"
+                        className="self-stretch px-3 text-3xl bg-gray-100 bg-opacity-25 hover:bg-opacity-50 
+                        focus:outline-none focus-visible:ring ring-green-500 ring-opacity-50 rounded-r"
                         type="button"
                         onClick={() =>
                             setFiles(files.filter((_, i) => i !== index))
@@ -76,7 +77,7 @@ const FormFiles = ({ type = "file", multiple, accept, files, setFiles }) => {
             {(files.length === 0 || multiple) && (
                 <li
                     key={files.length + 1}
-                    className="relative flex flex-row items-center text-base md:text-lg bg-gray-700 shadow rounded"
+                    className="relative flex flex-row items-center text-base md:text-lg bg-gray-500 shadow rounded"
                 >
                     <input
                         type="file"
@@ -86,18 +87,19 @@ const FormFiles = ({ type = "file", multiple, accept, files, setFiles }) => {
                         hidden
                         ref={fileInput}
                     />
-                    <span className="flex-grow py-2 px-4 truncate">
+                    <span className="flex-grow py-2 px-5 truncate">
                         {error
                             ? "Error loading "
                             : loading
                             ? "Loading "
-                            : "Add "}
+                            : "Ավելացնել "}
                         {type}
-                        {multiple && "s"}
+                        {multiple && ""}
                         {loading && "..."}
                     </span>
                     <button
-                        className="self-stretch px-3 text-3xl bg-gray-800 bg-opacity-25 hover:bg-opacity-50 focus:outline-none focus-visible:ring ring-blue-500 ring-opacity-50 rounded-r"
+                        className="self-stretch px-3 text-3xl bg-gray-800 bg-opacity-25 hover:bg-opacity-50 
+                        focus:outline-none focus-visible:ring ring-gray-500 ring-opacity-50 rounded-r"
                         type="button"
                         onClick={() => fileInput.current.click()}
                     >

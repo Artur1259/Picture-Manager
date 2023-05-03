@@ -63,6 +63,7 @@ onmessage = async ({
             },
         },
         ({ percent }) => {
+            console.log(percent)
             postMessage({ progress: percent });
         }
     );

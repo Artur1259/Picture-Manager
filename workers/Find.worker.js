@@ -43,6 +43,7 @@ onmessage = async ({
     },
 }) => {
     const imageUint = new Uint8Array(contents);
+    // console.log(imageUint)
 
     const marker = {
         "image/png": [174, 66, 96, 130],
