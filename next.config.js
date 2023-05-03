@@ -1,5 +1,5 @@
 module.exports = {
-    webpack(config, { defaultLoaders, dev, isServer }) {
+      webpack(config, { defaultLoaders, dev, isServer }) {
         if (!dev && !isServer) {
             Object.assign(config.resolve.alias, {
                 react: "preact/compat",
