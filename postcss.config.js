@@ -1,5 +1,5 @@
 module.exports = {
-    plugins: [
+     plugins: [
         "tailwindcss",
         "postcss-focus-visible",
         "postcss-flexbugs-fixes",
