@@ -7,7 +7,7 @@ module.exports = {
     theme: {
         fontFamily: {
             sans: [
-                "Inter",
+                "Inter", 
                 "-apple-system",
                 "BlinkMacSystemFont",
                 "Segoe UI",
