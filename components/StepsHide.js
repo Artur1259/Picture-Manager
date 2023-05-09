@@ -19,7 +19,7 @@ const StepsHide = () => {
         setHiding(true);
         const worker = new HideWorker();
         worker.onmessage = ({ data: { progress, result } }) => {
-            console.log(result);
+            // console.log(result);
             setProgress(progress);
             setResult(result);
         };

@@ -57,7 +57,7 @@ onmessage = async ({
                 imageUint.slice(index, index + marker.length).toString() ===
                 marker.toString()
         ) + marker.length;
-
+        console.log(indexOfZip);
     const zipEncryptedUint = imageUint.slice(indexOfZip);
     const zipUint = await decryptZip(zipEncryptedUint, imageUint, password);
 

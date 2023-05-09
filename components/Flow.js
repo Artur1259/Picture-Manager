@@ -19,7 +19,6 @@ const Flow = () => {
                 </noscript>
                 <ChooseFlow onChoice={setFlow} />
             </div>
-            
             <ChosenFlow />
             {/* <div className="absolute bottom-0 pt-32 w-full bg-gradient-to-t from-gray-200 to-gray-100 opacity-10"></div> */}
         </main>

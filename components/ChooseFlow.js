@@ -5,13 +5,13 @@ const ChooseFlow = ({ onChoice }) => (
         <FormRadio
             name="chooseFlow"
             value="hide"
-            label="թաքցնել ֆայլերը պատկերի ներսում"
+            label="Թաքնագրում"
             onChange={onChoice}
         />
         <FormRadio
             name="chooseFlow"
             value="find"
-            label="վերականգնել ֆայլերը պատկերից"
+            label="Վերծանում"
             onChange={onChoice}
         />
     </fieldset>

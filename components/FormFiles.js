@@ -38,6 +38,7 @@ const FormFiles = ({ type = "file", multiple, accept, files, setFiles }) => {
     };
 
     const uniqueFiles = (uniqueFiles, file) => {
+        
         const exists = uniqueFiles.find(
             (existing) =>
                 existing.name === file.name &&
@@ -45,9 +46,10 @@ const FormFiles = ({ type = "file", multiple, accept, files, setFiles }) => {
                 existing.size === file.size &&
                 existing.type === file.type
         );
-
+        console.log(uniqueFiles);
         return exists ? uniqueFiles : [...uniqueFiles, file];
     };
+    
 
     return (
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-8   p-8 -mx-8 sm:-mx-4 sm:rounded-lg">
